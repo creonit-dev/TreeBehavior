@@ -1,0 +1,15 @@
+{
+  "name": "creonit/propel-tree-behavior",
+  "type": "propel-behavior",
+  "keywords": [
+    "creonit",
+    "symfony",
+    "propel",
+    "behavior"
+  ],
+  "extra": {
+    "name": "tree",
+    "class": "Creonit\\PropelBehaviorBundle\\Tree\\TreeBehavior"
+  },
+  "license": "GNU GPLv3"
+}
