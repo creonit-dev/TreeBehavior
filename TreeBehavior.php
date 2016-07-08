@@ -1,6 +1,6 @@
 <?php
 
-namespace Creonit\PropelTreeBundle;
+namespace Creonit\PropelTreeBehavior;
 
 use Propel\Generator\Model\Behavior;
 use Propel\Generator\Model\ForeignKey;

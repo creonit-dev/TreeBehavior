@@ -9,12 +9,12 @@
   ],
   "extra": {
     "name": "tree",
-    "class": "Creonit\\PropelTreeBundle\\TreeBehavior"
+    "class": "Creonit\\PropelTreeBehavior\\TreeBehavior"
   },
   "license": "GNU GPLv3",
   "autoload": {
     "psr-4": {
-      "Creonit\\PropelTreeBundle\\": ""
+      "Creonit\\PropelTreeBehavior\\": ""
     }
   }
 }
