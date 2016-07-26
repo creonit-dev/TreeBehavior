@@ -22,21 +22,25 @@ class TreeBehavior extends Behavior
             'type' => 'integer',
         ]);
 
-        $table->addColumn([
-            'name' => 'parent_id',
-            'type' => 'integer',
-            'require' => false,
-        ]);
+        if(!$table->hasColumn('parent_id')){
+
+            $table->addColumn([
+                'name' => 'parent_id',
+                'type' => 'integer',
+                'require' => false,
+            ]);
 
 
-        $fk = new ForeignKey();
-        $fk->setForeignTableCommonName($table->getCommonName());
-        $fk->setForeignSchemaName($table->getSchema());
-        $fk->setDefaultJoin('LEFT JOIN');
-        $fk->setOnDelete(ForeignKey::CASCADE);
-        $fk->setOnUpdate(ForeignKey::CASCADE);
-        $fk->addReference('parent_id', 'id');
-        $table->addForeignKey($fk);
+            $fk = new ForeignKey();
+            $fk->setForeignTableCommonName($table->getCommonName());
+            $fk->setForeignSchemaName($table->getSchema());
+            $fk->setDefaultJoin('LEFT JOIN');
+            $fk->setOnDelete(ForeignKey::CASCADE);
+            $fk->setOnUpdate(ForeignKey::CASCADE);
+            $fk->addReference('parent_id', 'id');
+            $table->addForeignKey($fk);
+
+        }
 
        
     }
