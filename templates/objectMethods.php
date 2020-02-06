@@ -64,14 +64,14 @@ public function getChildrenQuery($level = 0)
     $query = new Child<?php echo $table->getPhpName(); ?>Query;
 
     if ($level < 1){
-        $query->filterByPath("{$this->getSelfPath()}%", ModelCriteria::LIKE)->find();
+        $query->filterByPath("{$this->getSelfPath()}%", ModelCriteria::LIKE);
 
     } else if ($level > 1){
         $path = '^' . $this->getSelfPath() . '([0-9]+/){0,'.($level-1).'}$';
-        $query->filterByPath($path, ' REGEXP ')->find();
+        $query->filterByPath($path, ' REGEXP ');
 
     } else {
-        $query->findByParentId($this->id);
+        $query->filterByParentId($this->id);
     }
 
     return $query;
